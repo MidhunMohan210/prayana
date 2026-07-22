@@ -35,7 +35,7 @@ export default function TravelPartnerSection() {
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute top-1/2 left-1/2 h-1/2 w-[min(1174px,94vw)] -translate-x-1/2 -translate-y-[30%] bg-contain bg-center bg-no-repeat sm:h-full"
+        className="pointer-events-none absolute top-1/2 left-1/2 h-1/2 w-[min(1174px,94vw)] -translate-x-1/2 -translate-y-[20%] bg-contain bg-center bg-no-repeat sm:h-full"
         style={{ backgroundImage: "url('/images/about/travel-pattern.svg')" }}
       />
 
@@ -51,7 +51,7 @@ export default function TravelPartnerSection() {
         }}
       >
         <motion.p
-          className="mb-4 text-xs font-semibold tracking-[0.2em] text-brand uppercase sm:text-sm"
+          className="mb-4 text-xs font-semibold tracking-[0.2em] text-gray-700 uppercase sm:text-sm"
           variants={introItemVariants}
         >
           Get to know us

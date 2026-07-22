@@ -5,17 +5,17 @@
 
   --color-background: #f7f4ed;
   --color-surface: #fffdf8;
-  --color-heading: #162a2b;
-  --color-body: #5b6865;
-  --color-brand: #176b66;
-  --color-brand-hover: #115852;
+  --color-heading: #102a43;
+  --color-body: #5b677a;
+  --color-brand: #0b6bcb;
+  --color-brand-hover: #0859aa;
   --color-border: #deddd5;
 
   --spacing-section-sm: 4.5rem;
   --spacing-section: 7rem;
   --spacing-section-lg: 9rem;
 
-  --shadow-soft: 0 12px 30px rgb(22 42 43 / 0.07);
+  --shadow-soft: 0 12px 30px rgb(16 42 67 / 0.07);
 }
 
 :root {
@@ -85,7 +85,7 @@ button {
 }
 
 .hero-background {
-  background-color: #3f6763;
+  background-color: #153a63;
 }
 
 .hero-heading {

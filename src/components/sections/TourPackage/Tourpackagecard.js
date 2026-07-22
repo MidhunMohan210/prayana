@@ -29,7 +29,7 @@ export default function TourPackageCard({ tourPackage }) {
       <div className="px-5 py-4">
         {/* Location */}
         <div className="flex items-center gap-1.5 text-[13px] text-slate-400">
-          <MapPin aria-hidden="true" className="size-3.5 text-[#2FB6A8]" />
+          <MapPin aria-hidden="true" className="size-3.5 text-[#2F80ED]" />
           <span className="truncate">{location}</span>
         </div>
 
@@ -43,7 +43,7 @@ export default function TourPackageCard({ tourPackage }) {
           {/* Duration pill */}
           <div className="flex items-center gap-2 rounded-xl bg-slate-100 py-2 pl-2 pr-3.5">
             <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-white shadow-sm">
-              <Calendar aria-hidden="true" className="size-4 text-[#2FB6A8]" />
+              <Calendar aria-hidden="true" className="size-4 text-[#2F80ED]" />
             </span>
             <span className="leading-tight">
               <p className="text-[11px] font-medium text-slate-400">

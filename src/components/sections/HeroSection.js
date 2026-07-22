@@ -65,7 +65,7 @@ export default function HeroSection() {
           </motion.p>
 
           <motion.div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap" variants={itemVariants}>
-            <Button href="#packages" className="w-full sm:w-auto">
+            <Button href="#packages" className="w-full sm:w-auto border-none">
               Explore Tour Packages
             </Button>
             <Button
