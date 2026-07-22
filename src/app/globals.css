@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: #f7f4ed;
+  --color-surface: #fffdf8;
+  --color-heading: #162a2b;
+  --color-body: #5b6865;
+  --color-brand: #176b66;
+  --color-brand-hover: #115852;
+  --color-border: #deddd5;
+
+  --spacing-section-sm: 4.5rem;
+  --spacing-section: 7rem;
+  --spacing-section-lg: 9rem;
+
+  --shadow-soft: 0 12px 30px rgb(22 42 43 / 0.07);
+}
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--color-background);
+  color: var(--color-body);
+  font-family: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-heading);
+  font-weight: 650;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-brand) 28%, transparent);
+  outline-offset: 3px;
+}
+
+@layer components {
+  .eyebrow {
+    @apply mb-4 text-xs font-bold tracking-[0.18em] text-brand uppercase;
+  }
+
+  .button-base {
+    @apply inline-flex min-h-12 items-center justify-center rounded-full border px-6 py-3 text-sm font-bold transition-colors duration-200;
+  }
+
+  .button-primary {
+    @apply border-brand bg-brand text-white hover:border-brand-hover hover:bg-brand-hover;
+  }
+
+  .button-secondary {
+    @apply border-border bg-surface text-heading hover:border-brand hover:text-brand;
+  }
+
+}
+
+.hero-background {
+  background-color: #3f6763;
+}
+
+.hero-heading {
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  body {
+    line-height: 1.7;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
