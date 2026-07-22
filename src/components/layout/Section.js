@@ -2,7 +2,7 @@ import Container from "./Container";
 
 const spacingStyles = {
   compact: "py-section-sm",
-  default: "py-section sm:py-section-lg",
+  default: "py-section sm:py-section-md",
 };
 
 export default function Section({

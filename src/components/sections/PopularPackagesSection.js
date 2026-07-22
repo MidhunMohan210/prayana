@@ -61,7 +61,7 @@ export default function PopularPackagesSection() {
         variants={revealVariants}
       >
         <div
-          className="inline-flex rounded-full border border-[#D8D6CC] bg-white p-1.5 shadow-sm"
+          className="inline-flex items-center gap-8 sm:gap-12"
           role="tablist"
           aria-label="Tour package type"
         >
@@ -72,10 +72,10 @@ export default function PopularPackagesSection() {
             aria-selected={activePackageType === "domestic"}
             aria-controls="packages-panel"
             onClick={() => setActivePackageType("domestic")}
-            className={`rounded-full px-5 py-2.5 text-sm font-semibold transition-colors duration-300 sm:px-8 ${
+            className={`border-b-2 px-1 pb-2 text-base font-semibold transition-colors duration-300 ${
               activePackageType === "domestic"
-                ? "bg-brand text-white shadow-sm"
-                : "text-body hover:text-brand"
+                ? "border-brand text-brand"
+                : "border-transparent text-body hover:text-brand"
             }`}
           >
             Domestic
@@ -87,10 +87,10 @@ export default function PopularPackagesSection() {
             aria-selected={activePackageType === "international"}
             aria-controls="packages-panel"
             onClick={() => setActivePackageType("international")}
-            className={`rounded-full px-5 py-2.5 text-sm font-semibold transition-colors duration-300 sm:px-8 ${
+            className={`border-b-2 px-1 pb-2 text-base font-semibold transition-colors duration-300 ${
               activePackageType === "international"
-                ? "bg-brand text-white shadow-sm"
-                : "text-body hover:text-brand"
+                ? "border-brand text-brand"
+                : "border-transparent text-body hover:text-brand"
             }`}
           >
             International
