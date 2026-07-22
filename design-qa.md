@@ -41,3 +41,48 @@
 ## Final Result
 
 final result: passed
+
+---
+
+# Design QA — Top Destinations Section
+
+## Evidence
+
+- Source visual truth: `/var/folders/mr/42zm75xj0sq65jwx7t9xxl_m0000gn/T/codex-clipboard-2ef6be0d-b8e7-4a5c-b8a2-befc590c8adb.png`
+- Source dimensions: 3024 × 1726 px; desktop reference screenshot
+- Browser-rendered implementation: `design-qa-top-destinations.png`
+- Implementation dimensions: 1425 × 990 px from a 1440 × 1000 CSS viewport at 1× density
+- Side-by-side comparison: `design-qa-comparison.png`
+- State: destination section at desktop width, default card state
+- Full-view evidence: the source and implementation were normalized to equal 1400 × 990 comparison panels and opened together in one composite.
+- Focused evidence: a separate crop was unnecessary because destination labels, radii, image crops, gaps, and both grid rows are legible in the normalized comparison.
+
+## Fidelity Review
+
+- Fonts and typography: the reference hierarchy is retained with a large centered title, short supporting line, uppercase country labels, and larger city names. Montserrat is intentionally retained to match Prayana’s established design system instead of copying the reference serif.
+- Spacing and layout rhythm: the four-column, two-row composition matches the source, including tall cards in columns one and three, stacked cards in columns two and four, 24 px desktop gaps, and rounded corners.
+- Colors and visual tokens: the section uses Prayana’s white surface, navy headings, muted body copy, white image labels, and restrained dark image scrims.
+- Image quality and asset fidelity: six purpose-made destination photographs use the correct portrait or landscape focal treatment and remain sharp after local optimization.
+- Copy and content: the source title pattern is preserved while the destinations and country labels use realistic Prayana travel content.
+
+## Functional and Responsive Checks
+
+- Each destination card links back to the available tour packages section with a destination-specific accessible name.
+- Desktop renders the intended asymmetric mosaic without horizontal overflow.
+- At a 390 × 844 CSS viewport, browser DOM measurements confirmed a 375 px-wide single-column section with 320 px cards and no horizontal overflow.
+- Browser console errors checked: none.
+- Lint and production build passed.
+
+## Findings and Comparison History
+
+- [Resolved P1] The first deep-link capture left the new section transparent because entrance animation observers had not activated. The section-only entrance animation was removed; the next browser capture showed all headings, images, and labels immediately.
+- Post-fix comparison found no actionable P0, P1, or P2 differences.
+- The Montserrat heading and Prayana destination content are intentional brand adaptations; the asymmetric grid proportions and hierarchy remain faithful to the source.
+
+## Follow-up Polish
+
+- P3: optional future destination detail routes could replace the current package-section links when the site becomes dynamic.
+
+## Final Result
+
+final result: passed
