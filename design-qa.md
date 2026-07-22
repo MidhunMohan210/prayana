@@ -1,37 +1,43 @@
-# Design QA
+# Design QA — Simple Tour Cards
 
 ## Evidence
 
-- Source visual truth: `https://togo.uxper.co/home-05/`
-- Desktop source capture: `togo-video-reference-desktop.jpg` (1501 × 900 px)
-- Mobile source capture: `togo-video-reference-mobile.jpg` (379 × 820 px)
-- Desktop implementation: `design-qa-video-desktop.jpg` (1497 × 891 px at approximately 1512 × 900 CSS px, 1× density)
-- Mobile implementation: `design-qa-video-mobile.jpg` (375 × 812 px at approximately 390 × 844 CSS px, 1× density)
-- Full-view comparison: `design-qa-video-comparison.png` (source left, Prayana adaptation right)
-- State: video playing with the overlay content and pause control visible
+- Source visual truth: `/var/folders/mr/42zm75xj0sq65jwx7t9xxl_m0000gn/T/codex-clipboard-af7bfcc2-69d0-4398-9bcc-c50299329a26.png`
+- Source dimensions: 1886 × 1328 px; desktop reference, 1× density
+- Desktop implementation: `design-qa-simple-cards-desktop-lower.png`
+- Desktop dimensions: 1425 × 1089 px captured from a 1440 × 1100 CSS viewport at 1× density
+- Mobile implementation: `design-qa-simple-cards-mobile.png`
+- Mobile dimensions: 375 × 812 px captured from a 390 × 844 CSS viewport at 1× density
+- State: packages section after entrance animation, default card state
+- Full-view comparison evidence: the source reference and desktop implementation were opened together in one comparison input.
+- Focused evidence: the desktop lower capture makes the image crop, title, metadata, divider, price, and CTA readable. The mobile capture verifies the same card surfaces in the one-column layout.
 
-## Fidelity review
+## Fidelity Review
 
-- Fonts and typography: the reference's large three-line statement and small uppercase eyebrow are preserved, adapted to Prayana's Montserrat family and established weight system.
-- Spacing and layout rhythm: the section is full width, cinematic on desktop, and reduced to a compact mobile band. Overlay copy and the round control retain the reference's left alignment and hierarchy.
-- Colors and visual tokens: a solid dark brand overlay replaces the reference's dark film treatment without gradients or glass effects. White copy and controls maintain strong contrast.
-- Image quality and asset fidelity: the exact supplied 3840 × 2160 MP4 is stored locally and rendered with `object-cover`; no source-site media is hotlinked.
-- Copy and content: the source layout is adapted with Prayana-specific text: “Travel with purpose” and “Unforgettable journeys, made for you.”
+- Fonts and typography: the implementation keeps Prayana's Montserrat system and clear title/metadata hierarchy. Titles use a compact two-line limit and the supporting labels remain legible at desktop and mobile sizes.
+- Spacing and layout rhythm: the reference's image-led three-column structure is retained, with simplified 24 px card gaps, compact body spacing, and equal first-row card heights. Prayana's existing rounded corners and softer elevation are intentional original adaptations.
+- Colors and visual tokens: the reference's blue and red are intentionally replaced with Prayana's teal, warm white, dark ink, and muted gold rating accent. No heavy gradients or glass effects were introduced.
+- Image quality and asset fidelity: all existing destination images render sharply with consistent 16:10 crops. Location information sits on a solid translucent photo strip instead of reproducing the reference's exact overlay treatment.
+- Copy and content: existing package titles, locations, durations, ratings, and prices are preserved. The long descriptions and secondary controls were removed to achieve the requested simpler cards.
 
-## Interaction and responsive checks
+## Functional and Responsive Checks
 
-- The video autoplays muted, loops, and uses `playsInline` for mobile compatibility.
-- The pause control was clicked and changed to “Play video”; clicking again resumed playback and restored “Pause video”.
-- Desktop and mobile captures show no horizontal clipping.
-- `npm run lint` passed.
-- `npm run build -- --webpack` passed.
+- All four Enquire links use the configured Prayana WhatsApp number, package-specific encoded messages, and safe new-tab attributes.
+- Desktop renders three columns with no horizontal overflow; mobile renders one 335 px card column with no horizontal overflow.
+- The section and card content remain visible after the entrance animation.
+- Browser console errors checked: none.
+- Lint and production build passed.
 
-## Findings and comparison history
+## Findings and Comparison History
 
-1. Initial P1: the first implementation capture inherited the global dark heading color. Fix: rendered the display line as an accessible role-based heading with an explicit white text fill. Post-fix evidence: `design-qa-video-desktop.jpg`.
-2. Initial P2: the mobile video band was taller than the reference. Fix: reduced the mobile height from 380 px to 320 px, the minimum display size to 36 px, and the control gap to 24 px. Post-fix evidence: `design-qa-video-mobile.jpg`.
-3. No open P0, P1, or P2 issues remain. The full comparison is sufficient because the typography, media crop, overlay, and control are clearly readable.
+- No actionable P0, P1, or P2 differences remain.
+- The green palette, rounded corners, package-specific pricing, and WhatsApp action are intentional Prayana adaptations requested by “don’t copy exact.”
+- No P0/P1/P2 fix iteration was required after the first side-by-side comparison.
 
-## Final result
+## Follow-up Polish
 
-passed
+- P3: when more package data is added, complete the second desktop row so the three-column rhythm continues evenly.
+
+## Final Result
+
+final result: passed
