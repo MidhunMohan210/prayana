@@ -6,12 +6,12 @@ export default function TravelPartnerSection() {
   return (
     <Section
       id="about"
-      className="relative scroll-mt-20 overflow-hidden bg-surface font-sans"
+      className="relative scroll-mt-20 overflow-hidden bg-surface font-sans !pb-15"
       contentClassName="max-w-[1440px]"
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute top-1/2 left-1/2 h-1/2 w-[min(1174px,94vw)] -translate-x-1/2 -translate-y-1/2 bg-contain bg-center bg-no-repeat sm:h-[70%]"
+        className="pointer-events-none absolute top-1/2 left-1/2 h-1/2 w-[min(1174px,94vw)] -translate-x-1/2 -translate-y-[30%] bg-contain bg-center bg-no-repeat sm:h-full"
         style={{ backgroundImage: "url('/images/about/travel-pattern.svg')" }}
       />
 
