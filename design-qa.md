@@ -44,6 +44,53 @@ final result: passed
 
 ---
 
+# Design QA — Footer
+
+## Evidence
+
+- Source visual truth: `/var/folders/mr/42zm75xj0sq65jwx7t9xxl_m0000gn/T/codex-clipboard-bdfb7b3a-8580-458d-a423-4cba49d24d1f.png`.
+- Source dimensions: 3024 × 848 px at 1× density.
+- Desktop implementation: `design-qa-footer-desktop.png`.
+- Desktop dimensions: 1440 × 900 px from a 1440 × 900 CSS viewport at 1× density.
+- Mobile implementation: `design-qa-footer-mobile.png`.
+- Mobile dimensions: 390 × 844 px from a 390 × 844 CSS viewport at 1× density.
+- State: page scrolled to the footer immediately after the contact section.
+- Full-view evidence: the reference screenshot and final desktop browser capture were opened together in one comparison input. The implementation capture includes the end of the contact section because the footer is shorter than the available viewport.
+- Focused evidence: the mobile capture was inspected separately for stacking, header clearance, content wrapping, touch-target spacing, and horizontal overflow.
+
+## Fidelity Review
+
+- Fonts and typography: the footer retains Prayana’s Montserrat system, with bright compact headings, muted secondary links, and a stronger logo lockup. The hierarchy follows the reference without copying its branding.
+- Spacing and layout rhythm: desktop uses a spacious four-column grid, a wide brand column, a horizontal divider, and a balanced lower copyright/social row. Mobile stacks all groups with generous separation and additional top clearance below the fixed header.
+- Colors and visual tokens: the near-black navy background, white headings, muted body text, blue icon accents, and Prayana-blue WhatsApp button provide the same high-contrast character as the source while remaining on brand.
+- Image quality and asset fidelity: the existing Prayana logo is rendered through `Next/Image` at its natural aspect. All remaining symbols use Lucide icons; no source-specific decorative overlay or unrelated robot badge was copied.
+- Copy and content: placeholder reference copy was replaced with Prayana’s real phone, email, Kerala location, site navigation, travel summary, and current-year copyright.
+
+## Functional and Responsive Checks
+
+- Company and Explore links point to existing page anchors.
+- WhatsApp, phone, email, and Google Maps actions use the configured business details; external actions use safe new-tab attributes where appropriate.
+- Placeholder social profiles remain intentionally non-clickable until real URLs are configured.
+- Desktop and 390 px mobile measurements confirmed no horizontal overflow.
+- Browser console warnings and errors checked: none.
+- ESLint and the production Next.js build passed.
+
+## Findings and Comparison History
+
+- [Resolved P2] The first desktop capture showed footer column headings inheriting the global dark heading color. Explicit white heading color and brighter blue icon tokens were applied; the revised capture confirms readable white headings on the dark surface.
+- [Resolved P2] The first mobile capture placed the footer brand lockup too close to the fixed header. Mobile top padding increased to 80 px; the revised capture shows clear separation.
+- Post-fix desktop/reference comparison and mobile review found no actionable P0, P1, or P2 issues.
+
+## Follow-up Polish
+
+- P3: replace the non-interactive social placeholders with live profile links when those URLs are available.
+
+## Final Result
+
+final result: passed
+
+---
+
 # Design QA — Contact Section
 
 ## Evidence
@@ -92,38 +139,43 @@ final result: passed
 
 ## Evidence
 
-- Source visual truth: `/var/folders/mr/42zm75xj0sq65jwx7t9xxl_m0000gn/T/codex-clipboard-260a81d7-091e-463a-8689-446d0ab3963a.png`
-- Source dimensions: 2994 × 1424 px; desktop reference screenshot
-- Earlier browser-rendered implementation: `design-qa-about-section.png`
-- Earlier implementation dimensions: 1425 × 990 px from a 1440 × 1000 CSS viewport at 1× density
-- Earlier side-by-side comparison: `design-qa-about-comparison.png`
-- State: About section at desktop width, default state
-- Full-view evidence: the source and earlier implementation were normalized and opened together in one comparison composite.
-- Focused evidence: a separate crop was unnecessary because the collage, heading, body copy, list, CTA, and statistic block were legible in the comparison.
+- Source visual truth: `/Users/midhun/Downloads/30700138_4074.jpg`.
+- Source dimensions: 3600 × 3206 px at 1× density.
+- Optimized production asset: `public/images/about/about-travel-illustration.jpg`, 1600 × 1425 px.
+- Desktop implementation: `design-qa-about-illustration-desktop.png`.
+- Desktop dimensions: 1440 × 1000 px from a 1440 × 1000 CSS viewport at 1× density.
+- Mobile implementation: `design-qa-about-illustration-mobile.png`.
+- Mobile dimensions: 390 × 844 px from a 390 × 844 CSS viewport at 1× density.
+- State: About section at default state.
+- Full-view evidence: the source illustration and desktop browser capture were opened together in one comparison input.
+- Focused evidence: the mobile capture verifies the illustration-to-text stacking, responsive width, image sharpness, and absence of horizontal overflow.
 
 ## Fidelity Review
 
-- Fonts and typography: the revised implementation uses a bold Georgia-style serif display heading, compact gray eyebrow, restrained sans-serif body copy, and small uppercase statistic labels to mirror the reference hierarchy.
-- Spacing and layout rhythm: the revised section uses the reference's two-column balance, large square framed image, overlapping landscape image, lower-left information block, and compact rectangular CTA.
-- Colors and visual tokens: the background is white with navy headings, gray supporting copy, and Prayana blue reserved for the CTA so the section stays faithful while respecting the site's requested blue primary color.
-- Image quality and asset fidelity: the locally optimized primary journey image and existing high-resolution Kochi image match the large-square and small-landscape slots without placeholders or CSS-drawn imagery.
-- Copy and content: reference placeholder copy was replaced with Prayana-specific content. The requested animated `250+ Tour Packages` and `10+ Years Experience` figures are retained in the lower-left composition.
+- Fonts and typography: the existing Montserrat hierarchy remains unchanged and legible beside the monochrome artwork.
+- Spacing and layout rhythm: desktop uses a balanced two-column layout with the illustration on the left and text on the right. Mobile stacks the artwork above the text with a consistent 56 px gap.
+- Colors and visual tokens: the pale-blue section background and dark line drawing blend cleanly through multiply blending, while Prayana blue remains reserved for interactive accents.
+- Image quality and asset fidelity: the supplied artwork is preserved without redrawing or approximating it. It was downscaled to 1600 px for web delivery and remains sharp at desktop and mobile sizes.
+- Copy and content: all existing About copy, statistics, phone details, and WhatsApp CTA remain unchanged.
 
 ## Functional and Responsive Checks
 
 - Both statistics increment once when entering the viewport and respect reduced-motion preferences.
-- The Find Tours CTA uses the configured WhatsApp destination and safe new-tab attributes.
+- The phone and WhatsApp actions retain their configured destinations.
+- Desktop and mobile measurements confirmed no horizontal overflow.
+- Browser console warnings and errors checked: none.
 - Lint and production build passed.
-- Browser console and post-fix visual checks could not be rerun because local browser access was denied after the first comparison.
 
 ## Findings and Comparison History
 
-- [Resolved in code, not visually re-verified P1] The first comparison showed a hidden primary image caused by an entrance-animation state. The animation wrapper was removed so the image is statically visible.
-- [Blocked verification P1] The first implementation did not match the reference collage closely enough. The section was rebuilt with the square framed image, overlapping smaller image, serif title, reference-aligned spacing, checklist, and rectangular CTA, but browser access was denied before a revised capture could be made.
+- The previously added bottom landmark strip was removed following the updated direction.
+- The former photo collage was replaced with the supplied illustration as the left-side visual.
+- The desktop illustration column was increased from 560 px to 600 px with a tighter column gap following the size-adjustment request.
+- Post-change desktop and mobile review found no actionable P0, P1, or P2 issues.
 
 ## Final Result
 
-final result: blocked
+final result: passed
 
 ---
 

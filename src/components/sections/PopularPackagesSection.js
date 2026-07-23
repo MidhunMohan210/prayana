@@ -31,7 +31,7 @@ export default function PopularPackagesSection() {
   return (
     <Section
       id="packages"
-      className="scroll-mt-20 bg-[#F6F5F0]"
+      className="scroll-mt-20 bg-[#f4f9fd]"
       contentClassName="max-w-[1440px]"
     >
       <motion.div

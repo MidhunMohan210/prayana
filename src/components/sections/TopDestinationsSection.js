@@ -11,7 +11,7 @@ export default function TopDestinationsSection() {
   return (
     <Section
       id="destinations"
-      className="scroll-mt-20 bg-white"
+      className="scroll-mt-20 bg-[#fefbf8]"
       contentClassName="max-w-[1440px]"
     >
       <div className="text-center">

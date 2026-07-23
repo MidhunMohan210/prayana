@@ -41,7 +41,7 @@ export default function ContactSection() {
         src="/images/contact/contact-travel-bg.png"
         alt=""
         fill
-        sizes="100vw"
+        sizes="200vw"
         className="-z-20 object-cover object-center opacity-30"
       />
       <div className="absolute inset-0 -z-10 bg-[#fffaf0]/55" />

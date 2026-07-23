@@ -58,40 +58,19 @@ export default function AboutSection() {
   return (
     <Section
       id="about"
-      className="relative scroll-mt-20 overflow-hidden bg-[#f3f8fc] font-sans !py-20 sm:!py-28 lg:!py-36"
+      className="relative scroll-mt-20 overflow-hidden bg-white font-sans !py-20 sm:!py-28 lg:!py-36"
       contentClassName="relative max-w-[1240px]"
     >
-      <div className="relative grid items-center gap-16 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1fr)] lg:gap-20">
-        {/* Image collage */}
-        <div className="relative mx-auto min-h-[520px] w-full max-w-[560px] sm:min-h-[600px] lg:mx-0">
-          {/* landscape image, top-left */}
-          <div className="absolute top-0 left-0 w-[78%] max-w-[420px]">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-md bg-white shadow-[0_22px_55px_rgba(16,42,67,0.18)]">
-              <Image
-                src="https://images.pexels.com/photos/10674339/pexels-photo-10674339.jpeg"
-                alt="A peaceful beach and mountain destination"
-                fill
-                sizes="(max-width: 1023px) 78vw, 420px"
-                className="object-cover"
-                priority={false}
-              />
-            </div>
-          </div>
-
-          {/* portrait image, bottom-right, overlapping */}
-          <div className="absolute right-0 bottom-0 z-10 w-[52%] max-w-[300px]">
-            <div className="relative aspect-[3/4] overflow-hidden rounded-md bg-white shadow-[0_20px_48px_rgba(16,42,67,0.16)]">
-              <Image
-                src="https://images.pexels.com/photos/6805799/pexels-photo-6805799.jpeg"
-                alt="A traveller enjoying a calm sunset on the water"
-                fill
-                sizes="(max-width: 1023px) 52vw, 300px"
-                className="object-cover"
-              />
-            </div>
-          </div>
-
-      
+      <div className="relative grid items-center gap-14 lg:grid-cols-2 lg:gap-14">
+        <div className="relative mx-auto w-full max-w-[600px] lg:mx-0">
+          <Image
+            src="/images/about/about-travel-illustration.jpg"
+            alt="Hand-drawn travel illustration with luggage, landmarks, and a direction sign"
+            width={1600}
+            height={1425}
+            sizes="(max-width: 1023px) 90vw, 600px"
+            className="h-auto w-full mix-blend-multiply"
+          />
         </div>
 
         {/* Text column */}
