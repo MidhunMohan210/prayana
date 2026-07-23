@@ -1,4 +1,6 @@
 import Header from "@/components/layout/Header";
+import AboutSection from "@/components/sections/AboutSection";
+import ContactSection from "@/components/sections/ContactSection";
 import HeroSection from "@/components/sections/HeroSection";
 import PopularPackagesSection from "@/components/sections/PopularPackagesSection";
 import TestimonialSection from "@/components/sections/TestimonialSection";
@@ -15,8 +17,10 @@ export default function Home() {
         <TravelPartnerSection />
         <PopularPackagesSection />
         <TopDestinationsSection />
+        <AboutSection />
         <VideoStorySection />
         <TestimonialSection />
+        <ContactSection />
       </main>
     </>
   );

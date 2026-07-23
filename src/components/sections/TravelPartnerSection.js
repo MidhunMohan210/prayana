@@ -29,7 +29,7 @@ export default function TravelPartnerSection() {
 
   return (
     <Section
-      id="about"
+      id="why-us"
       className="relative scroll-mt-20 overflow-hidden bg-surface font-sans !pb-15"
       contentClassName="max-w-[1440px]"
     >

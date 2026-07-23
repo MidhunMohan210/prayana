@@ -24,7 +24,7 @@ export default function HeroSection() {
     <section
       id="home"
       data-hero-image={heroImage}
-      className="hero-background relative isolate flex min-h-[720px] items-center overflow-hidden sm:min-h-[760px] lg:min-h-[820px]"
+      className="hero-background relative isolate flex min-h-[720px] items-center overflow-hidden sm:min-h-[780px] lg:min-h-[900px]"
       aria-labelledby="hero-heading"
     >
       <Image

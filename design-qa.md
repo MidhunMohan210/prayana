@@ -44,6 +44,89 @@ final result: passed
 
 ---
 
+# Design QA — Contact Section
+
+## Evidence
+
+- Source visual truth: `/Users/midhun/Downloads/ChatGPT Image Jul 23, 2026, 01_21_57 PM.png`
+- Source dimensions: 1537 × 1023 px at 1× density.
+- Copied production asset: `public/images/contact/contact-travel-bg.png`.
+- Desktop implementation: `design-qa-contact-desktop.png`.
+- Desktop dimensions: 1440 × 900 px from a 1440 × 900 CSS viewport at 1× density.
+- Mobile implementation: `design-qa-contact-mobile.png`.
+- Mobile dimensions: 390 × 844 px from a 390 × 844 CSS viewport at 1× density.
+- State: Contact section immediately after Testimonials, default empty form state.
+- Full-view comparison evidence: the source illustration and desktop browser capture were opened together in one comparison input.
+- Focused comparison evidence: the mobile capture was inspected separately to verify stacking, header clearance, background crop, typography, address wrapping, and form width.
+
+## Fidelity Review
+
+- Fonts and typography: Montserrat remains consistent with Prayana’s design system. The large navy heading, compact uppercase labels, supporting copy, and small form text remain legible at both tested viewports.
+- Spacing and layout rhythm: desktop uses the requested single two-column section with contact details on the left and a compact 460 px form on the right. Mobile stacks the same content without horizontal overflow.
+- Colors and visual tokens: the illustration is reduced to 30% opacity over a warm cream base with a light cream overlay. Prayana blue is reserved for links, icons, focus states, and the submit button.
+- Image quality and asset fidelity: the supplied 1537 × 1023 illustration is copied unchanged and rendered with `Next/Image` as a full-cover background. Its landmarks, route lines, globe, and balloon remain visible without competing with the content.
+- Copy and content: the left column presents the configured office address first, followed by the phone and email. The right form retains the WhatsApp enquiry path.
+
+## Functional and Responsive Checks
+
+- All form controls have persistent accessible labels, required validation, autocomplete where applicable, focus states, and responsive grid rules.
+- Form submission constructs a message from the entered fields and opens the configured Prayana WhatsApp conversation; no backend or API route was added.
+- Phone, email, and Google Maps links use the configured business details.
+- Browser testing confirmed all four fields accept input and the Send enquiry button remains enabled. The external WhatsApp handoff was not submitted during QA.
+- Desktop and mobile measurements confirmed no horizontal overflow.
+- Browser console warnings and errors checked: none.
+- ESLint and the production Next.js build passed.
+
+## Findings and Comparison History
+
+- [Resolved P2] The first mobile capture showed the fixed header overlapping the contact eyebrow. Mobile top padding increased from 64 px to 128 px; the revised 390 × 844 capture shows the eyebrow and heading clearly below the header.
+- Post-fix desktop and mobile review found no actionable P0, P1, or P2 issues.
+
+## Final Result
+
+final result: passed
+
+---
+
+# Design QA — About Section
+
+## Evidence
+
+- Source visual truth: `/var/folders/mr/42zm75xj0sq65jwx7t9xxl_m0000gn/T/codex-clipboard-260a81d7-091e-463a-8689-446d0ab3963a.png`
+- Source dimensions: 2994 × 1424 px; desktop reference screenshot
+- Earlier browser-rendered implementation: `design-qa-about-section.png`
+- Earlier implementation dimensions: 1425 × 990 px from a 1440 × 1000 CSS viewport at 1× density
+- Earlier side-by-side comparison: `design-qa-about-comparison.png`
+- State: About section at desktop width, default state
+- Full-view evidence: the source and earlier implementation were normalized and opened together in one comparison composite.
+- Focused evidence: a separate crop was unnecessary because the collage, heading, body copy, list, CTA, and statistic block were legible in the comparison.
+
+## Fidelity Review
+
+- Fonts and typography: the revised implementation uses a bold Georgia-style serif display heading, compact gray eyebrow, restrained sans-serif body copy, and small uppercase statistic labels to mirror the reference hierarchy.
+- Spacing and layout rhythm: the revised section uses the reference's two-column balance, large square framed image, overlapping landscape image, lower-left information block, and compact rectangular CTA.
+- Colors and visual tokens: the background is white with navy headings, gray supporting copy, and Prayana blue reserved for the CTA so the section stays faithful while respecting the site's requested blue primary color.
+- Image quality and asset fidelity: the locally optimized primary journey image and existing high-resolution Kochi image match the large-square and small-landscape slots without placeholders or CSS-drawn imagery.
+- Copy and content: reference placeholder copy was replaced with Prayana-specific content. The requested animated `250+ Tour Packages` and `10+ Years Experience` figures are retained in the lower-left composition.
+
+## Functional and Responsive Checks
+
+- Both statistics increment once when entering the viewport and respect reduced-motion preferences.
+- The Find Tours CTA uses the configured WhatsApp destination and safe new-tab attributes.
+- Lint and production build passed.
+- Browser console and post-fix visual checks could not be rerun because local browser access was denied after the first comparison.
+
+## Findings and Comparison History
+
+- [Resolved in code, not visually re-verified P1] The first comparison showed a hidden primary image caused by an entrance-animation state. The animation wrapper was removed so the image is statically visible.
+- [Blocked verification P1] The first implementation did not match the reference collage closely enough. The section was rebuilt with the square framed image, overlapping smaller image, serif title, reference-aligned spacing, checklist, and rectangular CTA, but browser access was denied before a revised capture could be made.
+
+## Final Result
+
+final result: blocked
+
+---
+
 # Design QA — Top Destinations Section
 
 ## Evidence
