@@ -5,6 +5,7 @@ import { Award, Compass, Luggage, Phone } from "lucide-react";
 import { useInView, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Section from "@/components/layout/Section";
+import Reveal from "@/components/ui/Reveal";
 import { siteConfig } from "@/data/siteConfig";
 
 function AnimatedNumber({ value, label, Icon }) {
@@ -62,7 +63,12 @@ export default function AboutSection() {
       contentClassName="relative max-w-[1240px]"
     >
       <div className="relative grid items-center gap-14 lg:grid-cols-2 lg:gap-14">
-        <div className="relative mx-auto w-full max-w-[600px] lg:mx-0">
+        <Reveal
+          className="relative mx-auto w-full max-w-[600px] lg:mx-0"
+          amount={0.35}
+          distance={38}
+          duration={0.72}
+        >
           <Image
             src="/images/about/about-travel-illustration.jpg"
             alt="Hand-drawn travel illustration with luggage, landmarks, and a direction sign"
@@ -71,10 +77,16 @@ export default function AboutSection() {
             sizes="(max-width: 1023px) 90vw, 600px"
             className="h-auto w-full mix-blend-multiply"
           />
-        </div>
+        </Reveal>
 
         {/* Text column */}
-        <div className="relative max-w-[610px] lg:pb-4">
+        <Reveal
+          className="relative max-w-[610px] lg:pb-4"
+          delay={0.08}
+          amount={0.35}
+          distance={38}
+          duration={0.72}
+        >
           <p className="mb-4 flex items-center gap-2 text-xs font-bold tracking-[0.08em] text-brand uppercase sm:text-sm">
             <Compass aria-hidden="true" className="size-4" strokeWidth={2.5} />
             About Us
@@ -122,7 +134,7 @@ export default function AboutSection() {
               Enquire on WhatsApp
             </a>
           </div>
-        </div>
+        </Reveal>
       </div>
     </Section>
   );

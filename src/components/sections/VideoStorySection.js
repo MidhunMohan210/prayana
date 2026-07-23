@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { Pause, Play } from "lucide-react";
 import Container from "@/components/layout/Container";
+import Reveal from "@/components/ui/Reveal";
 
 export default function VideoStorySection() {
   const videoRef = useRef(null);
@@ -42,7 +43,7 @@ export default function VideoStorySection() {
       <div className="absolute inset-0 -z-10 bg-heading/55" />
 
       <Container className="flex h-full items-center py-12 sm:py-16 lg:py-20">
-        <div className="max-w-[42rem] text-white">
+        <Reveal className="max-w-[42rem] text-white" amount={0.35}>
           <p className="text-xs font-semibold tracking-[0.16em] text-white/85 uppercase sm:text-sm">
             Travel with purpose
           </p>
@@ -71,7 +72,7 @@ export default function VideoStorySection() {
             </span>
             {isPlaying ? "Pause video" : "Play video"}
           </button>
-        </div>
+        </Reveal>
       </Container>
     </section>
   );

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { ArrowUpRight, Send } from "lucide-react";
 import Container from "@/components/layout/Container";
+import Reveal from "@/components/ui/Reveal";
 import { contactDetails } from "@/data/contactDetails";
 import { siteConfig } from "@/data/siteConfig";
 
@@ -48,7 +49,7 @@ export default function ContactSection() {
 
       <Container className="max-w-[1180px] pt-32 pb-16 sm:py-20 lg:py-24">
         <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(360px,460px)] lg:gap-20">
-          <div>
+          <Reveal amount={0.35} distance={38} duration={0.72}>
             <p className="text-xs font-bold tracking-[0.16em] text-brand uppercase">
               Contact Prayana Holidays
             </p>
@@ -91,10 +92,15 @@ export default function ContactSection() {
                 </article>
               ))}
             </div>
-          </div>
+          </Reveal>
 
-          <form
+          <Reveal
+            as="form"
             className="grid gap-3 rounded-2xl border border-white bg-white p-5 shadow-[0_20px_50px_rgba(16,42,67,0.12)] sm:grid-cols-2 sm:p-7"
+            delay={0.08}
+            amount={0.35}
+            distance={38}
+            duration={0.72}
             onSubmit={handleSubmit}
           >
             <div className="mb-2 sm:col-span-2">
@@ -165,7 +171,7 @@ export default function ContactSection() {
               Send enquiry
               <Send aria-hidden="true" className="size-4" />
             </button>
-          </form>
+          </Reveal>
         </div>
       </Container>
     </section>

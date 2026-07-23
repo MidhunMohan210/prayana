@@ -1,37 +1,57 @@
 "use client";
 
+import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Section from "@/components/layout/Section";
+import Reveal from "@/components/ui/Reveal";
 import {
   topDestinations,
   topDestinationsContent,
 } from "@/data/topDestinations";
 
+const destinationCardVariants = {
+  hidden: { opacity: 0, y: 44, scale: 0.97 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.72, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
 export default function TopDestinationsSection() {
+  const prefersReducedMotion = useReducedMotion();
+  const initialState = prefersReducedMotion ? "visible" : "hidden";
+
   return (
     <Section
       id="destinations"
       className="scroll-mt-20 bg-[#fefbf8]"
       contentClassName="max-w-[1440px]"
     >
-      <div className="text-center">
+      <Reveal className="text-center">
         <h2 className="text-4xl font-light tracking-[-0.04em] text-heading sm:text-5xl">
           {topDestinationsContent.title}
         </h2>
         <p className="mt-4 text-base text-body sm:text-lg">
           {topDestinationsContent.description}
         </p>
-      </div>
+      </Reveal>
 
       <div
         className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:h-[600px] lg:grid-cols-4 lg:grid-rows-2 lg:gap-6 xl:h-[660px]"
       >
-        {topDestinations.map((destination) => (
-          <article
+        {topDestinations.map((destination, index) => (
+          <motion.article
             key={destination.id}
             className={`group relative h-[320px] overflow-hidden rounded-[22px] sm:h-[340px] lg:h-auto ${
               destination.tall ? "lg:row-span-2" : ""
             }`}
+            initial={initialState}
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.22 }}
+            variants={prefersReducedMotion ? undefined : destinationCardVariants}
+            transition={{ delay: prefersReducedMotion ? 0 : (index % 4) * 0.06 }}
           >
             <a
               href="#packages"
@@ -55,7 +75,7 @@ export default function TopDestinationsSection() {
                 </span>
               </span>
             </a>
-          </article>
+          </motion.article>
         ))}
       </div>
     </Section>

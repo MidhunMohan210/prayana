@@ -11,6 +11,7 @@ import {
   UsersRound,
 } from "lucide-react";
 import Container from "@/components/layout/Container";
+import Reveal from "@/components/ui/Reveal";
 import { footerLinkGroups } from "@/data/footerLinks";
 import { siteConfig } from "@/data/siteConfig";
 
@@ -43,7 +44,7 @@ export default function Footer() {
   return (
     <footer id="footer" className="bg-[#0c1422] text-white">
       <Container className="pt-20 pb-14 sm:py-16 lg:py-20">
-        <div className="grid gap-12 border-b border-white/12 pb-12 sm:grid-cols-2 lg:grid-cols-[1.55fr_0.75fr_0.85fr_1.1fr] lg:gap-14 lg:pb-16">
+        <Reveal className="grid gap-12 border-b border-white/12 pb-12 sm:grid-cols-2 lg:grid-cols-[1.55fr_0.75fr_0.85fr_1.1fr] lg:gap-14 lg:pb-16">
           <div className="max-w-sm sm:col-span-2 lg:col-span-1">
             <Link
               href="#home"
@@ -125,9 +126,12 @@ export default function Footer() {
               })}
             </ul>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="flex flex-col gap-7 pt-8 sm:flex-row sm:items-center sm:justify-between">
+        <Reveal
+          className="flex flex-col gap-7 pt-8 sm:flex-row sm:items-center sm:justify-between"
+          delay={0.08}
+        >
           <p className="text-xs leading-6 text-white/45 sm:text-sm">
             © {new Date().getFullYear()} {siteConfig.businessName}. All rights reserved.
           </p>
@@ -165,7 +169,7 @@ export default function Footer() {
               );
             })}
           </div>
-        </div>
+        </Reveal>
       </Container>
     </footer>
   );

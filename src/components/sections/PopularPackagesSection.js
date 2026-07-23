@@ -13,11 +13,21 @@ import {
 } from "@/data/tourPackages";
 
 const revealVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 28 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 42, scale: 0.97 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
   },
 };
 
@@ -98,27 +108,26 @@ export default function PopularPackagesSection() {
         </div>
       </motion.div>
 
-      <motion.div
+      <div
         id="packages-panel"
         key={activePackageType}
         role="tabpanel"
         aria-labelledby={`${activePackageType}-packages-tab`}
         className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7"
-        initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: prefersReducedMotion ? 0 : 0.35 }}
-        variants={{
-          visible: {
-            transition: { staggerChildren: prefersReducedMotion ? 0 : 0.1 },
-          },
-        }}
       >
-        {activePackages.map((tourPackage) => (
-          <motion.div key={tourPackage.id} variants={revealVariants}>
+        {activePackages.map((tourPackage, index) => (
+          <motion.div
+            key={tourPackage.id}
+            initial={initialState}
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.22 }}
+            variants={prefersReducedMotion ? undefined : cardVariants}
+            transition={{ delay: prefersReducedMotion ? 0 : (index % 3) * 0.07 }}
+          >
             <TourPackageCard tourPackage={tourPackage} />
           </motion.div>
         ))}
-      </motion.div>
+      </div>
 
       <motion.div
         className="mt-12 flex justify-center"
