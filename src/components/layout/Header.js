@@ -14,6 +14,7 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuState, setMenuState] = useState({ open: false, pathname: null });
   const isMenuOpen = menuState.open && menuState.pathname === pathname;
+  const isSubpage = pathname !== "/";
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 24);
@@ -41,19 +42,19 @@ export default function Header() {
   }, [isMenuOpen, pathname]);
 
   const closeMenu = () => setMenuState({ open: false, pathname });
-  const headerText = "text-white";
+  const headerText = isSubpage ? "text-heading" : "text-white";
 
   return (
     <header
       data-testid="site-header"
       data-scrolled={isScrolled}
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        isScrolled ? "bg-black/40" : "bg-transparent"
+        isSubpage ? "border-b border-border bg-surface" : isScrolled ? "bg-black/40" : "bg-transparent"
       }`}
     >
       <Container className="flex h-20 max-w-[1440px] items-center justify-between gap-6 lg:h-24">
         <Link
-          href="#home"
+          href={isSubpage ? "/" : "#home"}
           className={`flex shrink-0 items-center gap-2.5 text-base font-bold tracking-[-0.03em] transition-colors sm:text-lg ${headerText}`}
           onClick={closeMenu}
         >
@@ -74,7 +75,7 @@ export default function Header() {
           {siteConfig.navigationItems.map((item) => (
             <Link
               key={item.label}
-              href={item.href}
+              href={isSubpage ? `/${item.href}` : item.href}
               className={`text-sm font-semibold transition-colors hover:text-brand ${headerText}`}
             >
               {item.label}
@@ -95,7 +96,7 @@ export default function Header() {
 
         <button
           type="button"
-          className="inline-flex size-11 items-center justify-center rounded-full border border-white/35 bg-black/10 text-white transition-colors hover:bg-black/20 lg:hidden"
+          className={`inline-flex size-11 items-center justify-center rounded-full border transition-colors lg:hidden ${isSubpage ? "border-border bg-white text-heading hover:bg-background" : "border-white/35 bg-black/10 text-white hover:bg-black/20"}`}
           aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={isMenuOpen}
           aria-controls="mobile-navigation"
@@ -112,7 +113,7 @@ export default function Header() {
               {siteConfig.navigationItems.map((item) => (
                 <Link
                   key={item.label}
-                  href={item.href}
+                href={isSubpage ? `/${item.href}` : item.href}
                   className="border-b border-border py-3.5 text-base font-semibold text-heading transition-colors hover:text-brand"
                   onClick={closeMenu}
                 >

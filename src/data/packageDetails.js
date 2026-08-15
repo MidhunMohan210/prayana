@@ -1,0 +1,46 @@
+export const packageDetails = {
+  "kerala-backwaters-luxury-retreat": {
+    title: "Kerala Backwaters & Private Houseboat Retreat",
+    location: "Alleppey & Munnar, Kerala",
+    duration: "5 days / 4 nights",
+    travelers: "2–12 guests",
+    type: "Private departure",
+    language: "English, Malayalam & Hindi",
+    price: "₹38,900",
+    unit: "per person",
+    gallery: [
+      "/images/about/about-journey.jpg",
+      "/images/hero/hero-main.jpg",
+      "/images/destinations/kochi.jpg",
+      "/images/destinations/kyoto.jpg",
+      "/images/destinations/dubai.jpg",
+    ],
+    overview: [
+      "Slow down among Kerala’s palm-lined canals on a thoughtfully planned escape that blends the calm of Alleppey with the cool, green hills of Munnar.",
+      "Settle into a private houseboat for an unhurried cruise through the backwaters, enjoy fresh local cuisine on board, and wake to mist settling over the water. Your journey continues into the Western Ghats for tea-garden walks, waterfall views, and quiet resort time.",
+      "With comfortable stays, dependable transfers, and a flexible pace, this is an easy, memorable Kerala holiday for couples, families, and small groups.",
+    ],
+    highlights: [
+      "Cruise the Alleppey backwaters aboard a private houseboat",
+      "Spend two restorative nights amid Munnar’s tea-covered hills",
+      "Enjoy a guided spice plantation and tea estate experience",
+      "Watch the sun set over the lake from your houseboat deck",
+      "Travel comfortably with curated stays and private transfers",
+    ],
+    included: [
+      "Accommodation in carefully selected stays",
+      "One-night private houseboat stay with all meals",
+      "Daily breakfast and specified meals",
+      "Private air-conditioned vehicle and driver",
+      "Sightseeing and experiences listed in the itinerary",
+      "Prayana on-trip assistance",
+    ],
+    excluded: ["Flights or rail tickets", "Personal expenses", "Travel insurance", "Meals not mentioned in the itinerary"],
+    cancellation: "You can cancel up to 21 days before departure for a full refund, less any confirmed supplier charges. We’ll clearly explain the applicable terms before you book.",
+    faqs: [
+      { question: "What should I bring?", answer: "Pack light cotton clothing, a light jacket for Munnar evenings, comfortable walking shoes, sunscreen, and any personal medicines." },
+      { question: "Is this package suitable for children?", answer: "Yes. The pace is relaxed and the houseboat experience is particularly popular with families. We can tailor room and activity choices for children." },
+      { question: "Know before you go", answer: "The itinerary may be adjusted for weather, road conditions, or local operational requirements. Share your preferred travel dates and our team will confirm the best plan." },
+    ],
+  },
+};

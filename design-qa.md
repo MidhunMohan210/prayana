@@ -262,3 +262,42 @@ final result: passed
 ## Final Result
 
 final result: passed
+# Package details page — design QA
+
+## Comparison target
+
+- Source visual truth: `design-qa-reference-desktop.png` — captured from the supplied reference URL.
+- Implementation: `design-qa-package-desktop.png` — browser-rendered local route `/packages/kerala-backwaters-luxury-retreat`.
+- Viewport: 1498 × 844 CSS pixels at device scale factor 1; no density normalization was required.
+- State: initial desktop page load, top of the package details page.
+- Focused checks: mobile at 390 × 844 CSS pixels, overview/details flow, and an expanded FAQ item.
+- Primary interaction tested: the “What should I bring?” FAQ expands and exposes its answer. The page recorded no browser-console errors.
+
+## Findings
+
+No actionable P0, P1, or P2 issues.
+
+- Fonts and typography: the existing Montserrat family is consistently applied. The package title, metadata, section headings, and CTA hierarchy mirror the reference’s relative scale and wrap cleanly at desktop and mobile sizes.
+- Spacing and layout rhythm: the breadcrumb/title/gallery sequence, two-column content and sticky desktop enquiry card, dividers, rounded gallery tiles, and mobile section navigation follow the reference hierarchy. The mobile gallery intentionally reduces to a single lead image, matching the reference’s compact mobile presentation.
+- Colors and visual tokens: the implementation uses Prayana’s navy, blue, warm off-white, and green confirmation tokens instead of the reference’s orange and white identity.
+- Image quality and assets: Prayana-owned/local project imagery is used in place of the reference’s elephant photography. This is an intentional brand/content difference; the gallery crop and tile treatment preserve the reference composition.
+- Copy and content: all trip copy is newly written for a Kerala package. Reviews and the customer-review section were intentionally omitted as requested.
+
+## Comparison history
+
+1. The first implementation placed the gallery’s secondary tiles incorrectly on desktop and hid the lead image on mobile. The gallery now uses explicit desktop tile positions and a mobile single-image treatment. Post-fix browser captures show no layout overflow or hidden primary content.
+
+## Implementation checklist
+
+- [x] Desktop gallery and sticky enquiry layout
+- [x] Overview, highlights, inclusions/exclusions, cancellation policy, and FAQs
+- [x] No review section
+- [x] WhatsApp enquiry calls to action
+- [x] Mobile layout and FAQ interaction checked
+- [x] Browser console checked for errors
+
+## Follow-up polish
+
+- [P3] Replace the temporary gallery mix with commissioned or licensed Kerala-specific travel photography when the final asset set is available.
+
+final result: passed
