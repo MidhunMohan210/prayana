@@ -44,6 +44,47 @@ final result: passed
 
 ---
 
+# Design QA — Floating Quick Actions
+
+## Evidence
+
+- Source visual truth: `/var/folders/mr/42zm75xj0sq65jwx7t9xxl_m0000gn/T/codex-clipboard-cc7ef638-b4b9-4b48-bdaf-eb61304fbb53.png`.
+- Source dimensions: 250 × 442 px at 1× density.
+- Browser-rendered implementation: `design-qa-floating-actions.png`.
+- Implementation dimensions: 390 × 844 px from a 390 × 844 CSS viewport at 1× density.
+- State: page scrolled below the hero with all three fixed actions visible at bottom right.
+- Full-view evidence: the reference and implementation screenshot were opened together in one comparison input.
+- Focused evidence: the buttons are large and isolated enough in both captures to compare icon treatment, color, spacing, shape, and placement without a separate crop.
+
+## Fidelity Review
+
+- Fonts and typography: the controls are icon-only in both the source and implementation; accessible labels and native title tooltips provide text alternatives without adding visible copy.
+- Spacing and layout rhythm: the three actions form the requested compact vertical stack with consistent 10 px gaps. The phone action is circular, while WhatsApp and back-to-top use rounded-square containers.
+- Colors and visual tokens: the two communication actions use distinct fresh greens and the back-to-top action uses a bright blue, matching the source’s visual hierarchy.
+- Image quality and asset fidelity: the phone and chevron use crisp Lucide symbols, while the middle action uses the exact WhatsApp brand icon from React Icons. No raster assets, handcrafted SVGs, emoji, or CSS-drawn icon approximations were introduced.
+- Copy and content: the controls map to Prayana’s configured phone number, configured WhatsApp conversation, and a back-to-top action.
+
+## Functional and Responsive Checks
+
+- The phone action exposes `tel:+917736182977`.
+- The WhatsApp action opens the configured Prayana WhatsApp URL in a safe new tab.
+- The back-to-top button was clicked after scrolling to 1550.5 px and returned the page to `scrollY: 0`.
+- All three mobile controls measured 40 × 40 CSS px and remain within the 390 px viewport without horizontal overflow.
+- Reduced-motion preferences switch the scroll behavior from smooth to immediate.
+- Browser console warnings and errors checked: none.
+- ESLint and the production Next.js build passed.
+
+## Findings and Comparison History
+
+- [Resolved P2] The first implementation used a generic chat bubble and larger 48 px controls. The revised implementation uses the exact WhatsApp brand icon and compact 40 px controls, confirmed in the second side-by-side comparison.
+- No actionable P0, P1, or P2 differences remain.
+
+## Final Result
+
+final result: passed
+
+---
+
 # Design QA — Footer
 
 ## Evidence

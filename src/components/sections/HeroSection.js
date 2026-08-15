@@ -37,7 +37,7 @@ export default function HeroSection() {
       />
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(10,26,26,0.82)_0%,rgba(10,26,26,0.58)_42%,rgba(10,26,26,0.12)_75%)] max-md:bg-[linear-gradient(90deg,rgba(10,26,26,0.8)_0%,rgba(10,26,26,0.55)_65%,rgba(10,26,26,0.28)_100%)]" />
 
-      <Container className="relative pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-36">
+      <Container className="relative max-w-[1440px] pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-36">
         <motion.div
           className="max-w-3xl text-white"
           initial={initialState}

@@ -43,7 +43,7 @@ const contactLinks = [
 export default function Footer() {
   return (
     <footer id="footer" className="bg-[#0c1422] text-white">
-      <Container className="pt-20 pb-14 sm:py-16 lg:py-20">
+      <Container className="max-w-[1440px] pt-20 pb-14 sm:py-16 lg:py-20">
         <Reveal className="grid gap-12 border-b border-white/12 pb-12 sm:grid-cols-2 lg:grid-cols-[1.55fr_0.75fr_0.85fr_1.1fr] lg:gap-14 lg:pb-16">
           <div className="max-w-sm sm:col-span-2 lg:col-span-1">
             <Link

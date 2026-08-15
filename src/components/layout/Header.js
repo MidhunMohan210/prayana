@@ -51,7 +51,7 @@ export default function Header() {
         isScrolled ? "bg-black/40" : "bg-transparent"
       }`}
     >
-      <Container className="flex h-20 items-center justify-between gap-6 lg:h-24">
+      <Container className="flex h-20 max-w-[1440px] items-center justify-between gap-6 lg:h-24">
         <Link
           href="#home"
           className={`flex shrink-0 items-center gap-2.5 text-base font-bold tracking-[-0.03em] transition-colors sm:text-lg ${headerText}`}
@@ -107,7 +107,7 @@ export default function Header() {
 
       {isMenuOpen ? (
         <div id="mobile-navigation" className="border-t border-border bg-surface lg:hidden">
-          <Container className="max-h-[calc(100dvh-5rem)] overflow-y-auto py-6">
+          <Container className="max-h-[calc(100dvh-5rem)] max-w-[1440px] overflow-y-auto py-6">
             <nav aria-label="Mobile navigation" className="flex flex-col">
               {siteConfig.navigationItems.map((item) => (
                 <Link

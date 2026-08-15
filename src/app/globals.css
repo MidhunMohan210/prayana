@@ -92,6 +92,23 @@ button {
   color: #ffffff;
 }
 
+@keyframes phone-blink-zoom {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+}
+
+.phone-blink {
+  animation: phone-blink-zoom 1.2s ease-in-out infinite;
+}
+
 @media (max-width: 767px) {
   body {
     line-height: 1.7;
@@ -109,5 +126,9 @@ button {
   *::after {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .phone-blink {
+    animation: phone-blink-zoom 1.2s ease-in-out infinite !important;
   }
 }
