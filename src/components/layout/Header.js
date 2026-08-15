@@ -42,14 +42,14 @@ export default function Header() {
   }, [isMenuOpen, pathname]);
 
   const closeMenu = () => setMenuState({ open: false, pathname });
-  const headerText = isSubpage ? "text-heading" : "text-white";
+  const headerText = "text-white";
 
   return (
     <header
       data-testid="site-header"
       data-scrolled={isScrolled}
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        isSubpage ? "border-b border-border bg-surface" : isScrolled ? "bg-black/40" : "bg-transparent"
+        isScrolled ? "bg-black/40" : "bg-transparent"
       }`}
     >
       <Container className="flex h-20 max-w-[1440px] items-center justify-between gap-6 lg:h-24">
@@ -96,7 +96,7 @@ export default function Header() {
 
         <button
           type="button"
-          className={`inline-flex size-11 items-center justify-center rounded-full border transition-colors lg:hidden ${isSubpage ? "border-border bg-white text-heading hover:bg-background" : "border-white/35 bg-black/10 text-white hover:bg-black/20"}`}
+          className="inline-flex size-11 items-center justify-center rounded-full border border-white/35 bg-black/10 text-white transition-colors hover:bg-black/20 lg:hidden"
           aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={isMenuOpen}
           aria-controls="mobile-navigation"
