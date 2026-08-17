@@ -24,6 +24,5 @@ export const siteConfig = {
   socialLinks: [
     { label: "Instagram", href: "#", isPlaceholder: true },
     { label: "Facebook", href: "#", isPlaceholder: true },
-    { label: "YouTube", href: "#", isPlaceholder: true },
   ],
 };

@@ -21,7 +21,7 @@ export default function Home() {
         <TopDestinationsSection />
         <AboutSection />
         <VideoStorySection />
-        <TestimonialSection />
+        <TestimonialSection />``
         <ContactSection />
       </main>
       <Footer />

@@ -2,23 +2,20 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowUpRight,
-  Camera,
   Mail,
   MapPin,
   MessageCircle,
   Phone,
-  Play,
-  UsersRound,
 } from "lucide-react";
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import Container from "@/components/layout/Container";
 import Reveal from "@/components/ui/Reveal";
 import { footerLinkGroups } from "@/data/footerLinks";
 import { siteConfig } from "@/data/siteConfig";
 
 const socialIcons = {
-  Facebook: UsersRound,
-  Instagram: Camera,
-  YouTube: Play,
+  Facebook: FaFacebookF,
+  Instagram: FaInstagram,
 };
 
 const contactLinks = [
